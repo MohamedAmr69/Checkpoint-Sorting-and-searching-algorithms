@@ -1,0 +1,32 @@
+ALGORITHM InstertionSort
+VAR
+    number : ARRAY_OF INTEGER;
+    i , j , temp , size : INTEGER ;
+BEGIN
+
+    //Reading for elements and size 
+    write ("Enter the size of the array :" );
+    read(size);
+
+    write("Enter the array elements :")
+    FOR i FROM 1 TO size DO
+        read(number[i])
+    END_FOR
+    //Intesrtion
+    FOR i FROM 2 TO size   DO
+        temp := number[1];
+        j := i;
+
+        WHILE (j > 1 AND number[j-1]>temp) DO
+            number[j] := number [j-1];
+            j := j-1;    
+        END_WHILE
+        number[j] := temp ;
+    END_FOR
+
+    //Sorted Array 
+    write("the sorted array is : ")
+    FOR i FROM 1 TO size DO
+        write( number[i])
+    END_FOR
+END
